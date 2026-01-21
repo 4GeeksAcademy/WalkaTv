@@ -141,7 +141,7 @@ export default function HeroSection() {
           </div>
           <div className="text-center border-l border-naranja/30 pl-6">
             <p className="text-3xl font-bold text-naranja font-oswald">3M</p>
-            <p className="text-sm text-moonstone">View</p>
+            <p className="text-sm text-moonstone">Views</p>
           </div>
         </motion.div>
       </motion.div>
