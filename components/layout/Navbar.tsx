@@ -31,7 +31,12 @@ export default function Navbar() {
             scrolled ? "text-naranja" : "text-white"
           }`}
         >
-          WALKA TV
+          <img 
+            src="/walka.png" 
+            alt="walka tv logo"  
+            className="h-10 md:h-14 p-1 object-contain transition-transform duration-200 hover:scale-105"
+            
+          />
         </button>
         
         <div className="flex gap-4 md:gap-8 items-center">
@@ -79,7 +84,7 @@ export default function Navbar() {
               <FaInstagram />
             </motion.a>
             <motion.a 
-              href="https://tiktok.com/@walkatv" 
+              href="https://tiktok.com/@walkatv_" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-moonstone hover:text-naranja transition-colors text-sm md:text-lg cursor-pointer"

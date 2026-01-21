@@ -39,17 +39,19 @@ export default function VideoCarousel({
   const prevVideo = () =>
     setCurrentVideo((prev) => (prev - 1 + videos.length) % videos.length);
 
+
+  // Tamaño más grande para Hero
   const mainContainerClass = compact
-    ? "w-full max-w-md aspect-video rounded-3xl"
-    : "relative aspect-video rounded-2xl";
+    ? "w-full max-w-lg aspect-video rounded-3xl"
+    : "relative w-full max-w-3xl aspect-video rounded-2xl";
   const mainBorderClass = compact
     ? "border-2 border-naranja/40"
-    : "border-2 border-naranja";
+    : "border-4 border-naranja";
 
   return (
     <div className="w-full flex flex-col items-center gap-6 md:gap-8">
       {/* Main Video Container */}
-      <div className={`${mainContainerClass} overflow-hidden shadow-2xl ${mainBorderClass} relative group w-full max-w-sm md:max-w-md`}>
+      <div className={`${mainContainerClass} overflow-hidden shadow-2xl ${mainBorderClass} relative group w-full`}>
         <motion.img
           key={currentVideo}
           src={videos[currentVideo].thumb}

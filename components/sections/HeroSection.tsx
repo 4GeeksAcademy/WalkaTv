@@ -67,14 +67,20 @@ export default function HeroSection() {
         viewport={{ once: false, amount: 0.2 }}
       >
         <motion.h1
-          className="font-oswald text-4xl md:text-6xl lg:text-7xl text-naranja drop-shadow-2xl tracking-widest leading-tight"
+          className="font-oswald text-5xl md:text-7xl lg:text-8xl text-naranja drop-shadow-2xl tracking-widest leading-tight flex flex-col items-center md:items-start w-full text-center md:text-left"
+          style={{}}
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          WALKA TV
+          <span className="inline-block">
+            walk
+            <span className="relative inline-block">
+              a
+              <span className="absolute left-1/2 -translate-x-1/2 top-[85%] text-base md:text-2xl lg:text-4xl text-moonstone font-bold tracking-tight whitespace-nowrap">TV</span>
+            </span>
+          </span>
         </motion.h1>
-
         <motion.p
           className="text-lg md:text-xl text-moonstone font-medium max-w-md leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
@@ -130,19 +136,19 @@ export default function HeroSection() {
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <div className="text-center">
-            <p className="text-3xl font-bold text-naranja font-oswald">{stats ? formatNumber(stats.subscribers) : "1.2M"}</p>
-            <p className="text-sm text-moonstone/80">Suscriptores</p>
+            <p className="text-3xl font-bold text-naranja font-oswald">76K</p>
+            <p className="text-sm text-moonstone">Suscriptores</p>
           </div>
           <div className="text-center border-l border-naranja/30 pl-6">
-            <p className="text-3xl font-bold text-naranja font-oswald">{stats ? formatNumber(stats.views) : "48M"}</p>
-            <p className="text-sm text-moonstone/80">Vistas</p>
+            <p className="text-3xl font-bold text-naranja font-oswald">3M</p>
+            <p className="text-sm text-moonstone">View</p>
           </div>
         </motion.div>
       </motion.div>
 
       {/* Right Column - Video Preview */}
       <motion.div
-        className="relative z-10 w-full md:w-1/2 flex flex-col items-center justify-center px-4 md:px-12 mt-8 md:mt-0"
+        className="relative z-10 w-full md:w-3/4 flex flex-col items-center justify-center px-2 md:px-20 mt-8 md:mt-0"
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: 50 }}
@@ -160,7 +166,7 @@ export default function HeroSection() {
             autoplay={true}
             autoplayInterval={5000}
             showThumbnails={false}
-            compact={true}
+            compact={false}
           />
         ) : (
           <div className="w-full max-w-sm aspect-video bg-moonstone/20 rounded-3xl border-2 border-naranja/40 flex items-center justify-center">

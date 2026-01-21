@@ -1,5 +1,6 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { FaYoutube, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 interface YoutubeStats {
@@ -12,41 +13,12 @@ interface YoutubeStats {
 }
 
 export default function BentoGrid() {
-  const [stats, setStats] = useState<YoutubeStats | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchYoutubeStats = async () => {
-      try {
-        const response = await fetch("/api/youtube-stats");
-        if (!response.ok) throw new Error("Error fetching stats");
-        const data = await response.json();
-        setStats(data);
-      } catch (err) {
-        setError(String(err));
-        console.error("Error:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchYoutubeStats();
-  }, []);
-
-  const formatNumber = (num: number) => {
-    if (num >= 1000000) return Math.floor(num / 1000000) + "M";
-    if (num >= 1000) return Math.floor(num / 1000) + "K";
-    return num.toString();
-  };
-
-  const statsDisplay = stats
-    ? [
-        { label: "Suscriptores", value: formatNumber(stats.subscribers), accent: "from-naranja/20 to-jet/80" },
-        { label: "Vistas", value: formatNumber(stats.views), accent: "from-moonstone/20 to-jet/80" },
-        { label: "Videos", value: stats.videoCount.toString(), accent: "from-jet/50 to-naranja/10" },
-      ]
-    : [];
+  // Datos hardcodeados con íconos
+  const statsDisplay = [
+    { icon: <FaYoutube className="text-moonstone hover:text-naranja transition-colors text-3xl md:text-4xl mb-2" />, value: "23K", accent: "from-naranja/20 to-jet/80", label: "YouTube" },
+    { icon: <FaInstagram className="text-moonstone hover:text-naranja transition-colors text-3xl md:text-4xl mb-2" />, value: "53K", accent: "from-moonstone/20 to-jet/80", label: "Instagram" },
+    { icon: null, value: "3M", accent: "from-jet/50 to-naranja/10", label: "Views" },
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -67,33 +39,7 @@ export default function BentoGrid() {
     },
   };
 
-  if (loading) {
-    return (
-      <section className="snap-start min-h-screen w-full flex items-center justify-center bg-[#000] py-20 md:py-0" data-section="stats">
-        <div className="text-center">
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="inline-block"
-          >
-            <div className="w-12 h-12 border-4 border-naranja border-t-transparent rounded-full" />
-          </motion.div>
-          <p className="text-moonstone mt-4">Cargando estadísticas...</p>
-        </div>
-      </section>
-    );
-  }
-
-  if (error || !stats) {
-    return (
-      <section className="snap-start min-h-screen w-full flex items-center justify-center bg-[#000] py-20 md:py-0" data-section="stats">
-        <div className="text-center">
-          <p className="text-naranja font-bold mb-4">Error cargando estadísticas</p>
-          <p className="text-moonstone text-sm">{error}</p>
-        </div>
-      </section>
-    );
-  }
+  // ...ya no se maneja loading ni error porque los datos son hardcodeados
 
   return (
     <section className="snap-start min-h-screen w-full flex items-center justify-center bg-[#000] py-20 md:py-0" style={{backgroundColor: '#000'}} data-section="stats">
@@ -113,7 +59,11 @@ export default function BentoGrid() {
             whileHover={{ scale: 1.1 }}
           >
             <span className="text-4xl md:text-6xl font-extrabold text-naranja drop-shadow-lg mb-4 font-oswald">{stat.value}</span>
-            <span className="text-xs md:text-sm font-bold text-moonstone uppercase tracking-widest">{stat.label}</span>
+            {stat.icon ? (
+              <span className="mb-2">{stat.icon}</span>
+            ) : (
+              <span className="text-xs md:text-sm font-bold text-moonstone uppercase tracking-widest mb-2">{stat.label}</span>
+            )}
           </motion.div>
         ))}
       </motion.div>

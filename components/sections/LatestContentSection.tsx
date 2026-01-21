@@ -63,7 +63,7 @@ export default function LatestContentSection() {
         transition={{ duration: 0.6 }}
         viewport={{ once: false, amount: 0.3 }}
       >
-        Últimos Videos
+        Últimos videos
       </motion.h2>
 
       {loading ? (
