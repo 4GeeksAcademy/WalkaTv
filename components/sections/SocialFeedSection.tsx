@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function SocialFeedSection() {
   return (
-    <section className="snap-start min-h-screen w-full flex flex-col items-center justify-center bg-[#000] text-white px-4 py-20 md:py-0" style={{backgroundColor: '#000'}}>
+    <section className="snap-start min-h-screen w-full flex flex-col items-center justify-center text-white px-4 py-20 md:py-0">
       <motion.h2
         className="text-3xl md:text-5xl font-bold mb-12 text-moonstone font-oswald"
         initial={{ opacity: 0, y: -30 }}

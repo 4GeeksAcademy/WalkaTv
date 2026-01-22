@@ -54,7 +54,7 @@ export default function LatestContentSection() {
   };
 
   return (
-    <section className="snap-start min-h-screen w-full flex flex-col items-center justify-center bg-[#000] text-white px-4 py-20 md:py-0" style={{backgroundColor: '#000'}} data-section="latest">
+    <section className="bg-jet snap-start min-h-screen w-full flex flex-col items-center justify-center text-white px-4 py-20 md:py-0 scroll-mt-15" data-section="latest">
       <motion.h2
         className="text-2xl md:text-4xl lg:text-5xl font-bold mb-8 md:mb-12 text-naranja font-oswald"
         initial={{ opacity: 0, y: -30 }}
@@ -73,7 +73,7 @@ export default function LatestContentSection() {
             transition={{ duration: 2, repeat: Infinity }}
             className="inline-block"
           >
-            <div className="w-12 h-12 border-4 border-naranja border-t-transparent rounded-full" />
+            <div className="w-12 h-12 border-2 border-moonstone/40 aspect-square" />
           </motion.div>
           <p className="text-moonstone mt-4">Cargando videos...</p>
         </div>
@@ -101,7 +101,7 @@ export default function LatestContentSection() {
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="relative aspect-video bg-moonstone rounded-xl overflow-hidden shadow-lg border border-moonstone/40 group-hover:border-naranja transition-all duration-300">
+              <div className="relative aspect-video bg-moonstone overflow-hidden shadow-lg border border-moonstone/40 group-hover:border-naranja transition-all duration-300">
                 <img
                   src={video.thumbnail}
                   alt={video.title}

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import BentoGrid from "../ui/BentoGridNew";
 
 export default function FooterSection() {
   const containerVariants = {
@@ -25,7 +26,7 @@ export default function FooterSection() {
   };
 
   return (
-    <div className="w-full bg-[#000] text-white py-4 md:py-6 border-t border-naranja/20">
+    <div className="w-full bg-jet text-moonstone py-4 md:py-6 border-t border-naranja/20">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         <motion.div
           className="flex flex-col items-center gap-3"
@@ -40,7 +41,7 @@ export default function FooterSection() {
             className="text-center text-moonstone/50 text-xs md:text-xs"
             variants={itemVariants}
           >
-            © 2025 Walka TV. Todos los derechos reservados.
+            © 2026 Walka TV. Todos los derechos reservados.
           </motion.p>
         </motion.div>
       </div>

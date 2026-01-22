@@ -42,8 +42,8 @@ export default function VideoCarousel({
 
   // Tamaño más grande para Hero
   const mainContainerClass = compact
-    ? "w-full max-w-lg aspect-video rounded-3xl"
-    : "relative w-full max-w-3xl aspect-video rounded-2xl";
+    ? "w-full max-w-lg aspect-video"
+    : "relative w-full max-w-3xl aspect-video";
   const mainBorderClass = compact
     ? "border-2 border-naranja/40"
     : "border-4 border-naranja";
@@ -64,7 +64,7 @@ export default function VideoCarousel({
 
         {/* Play Icon Overlay - Centered */}
         <div 
-          className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/40 transition-all duration-300 cursor-pointer"
+          className="absolute inset-0 flex items-center justify-center bg-jet/20 hover:bg-jet/40 transition-all duration-300 cursor-pointer"
           onClick={() => {
             if (videos[currentVideo].youtubeUrl) {
               window.open(videos[currentVideo].youtubeUrl, '_blank');
@@ -86,20 +86,20 @@ export default function VideoCarousel({
         <button
           type="button"
           onClick={prevVideo}
-          className="absolute left-2 md:left-3 top-1/2 -translate-y-1/2 bg-naranja hover:bg-naranja/80 text-black rounded-full w-8 md:w-12 h-8 md:h-12 flex items-center justify-center transition-all duration-300 cursor-pointer font-bold text-lg md:text-xl shadow-lg opacity-0 group-hover:opacity-100 z-20"
+          className="absolute left-2 md:left-3 top-1/2 -translate-y-1/2 bg-naranja hover:bg-naranja/80 text-jet rounded-full w-8 md:w-12 h-8 md:h-12 flex items-center justify-center transition-all duration-300 cursor-pointer font-bold text-lg md:text-xl shadow-lg opacity-0 group-hover:opacity-100 z-20"
         >
           ‹
         </button>
         <button
           type="button"
           onClick={nextVideo}
-          className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 bg-naranja hover:bg-naranja/80 text-black rounded-full w-8 md:w-12 h-8 md:h-12 flex items-center justify-center transition-all duration-300 cursor-pointer font-bold text-lg md:text-xl shadow-lg opacity-0 group-hover:opacity-100 z-20"
+          className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 bg-naranja hover:bg-naranja/80 text-jet rounded-full w-8 md:w-12 h-8 md:h-12 flex items-center justify-center transition-all duration-300 cursor-pointer font-bold text-lg md:text-xl shadow-lg opacity-0 group-hover:opacity-100 z-20"
         >
           ›
         </button>
 
         {/* Video Title - Bottom */}
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent pt-12 pb-4 px-4">
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-jet via-jet/70 to-transparent pt-12 pb-4 px-4">
           <p className="text-white font-bold text-base md:text-lg font-oswald truncate">
             {videos[currentVideo].title}
           </p>
@@ -134,7 +134,7 @@ export default function VideoCarousel({
               key={i}
               type="button"
               onClick={() => setCurrentVideo(i)}
-              className={`min-w-[100px] aspect-square rounded-lg cursor-pointer border-2 overflow-hidden transition-all hover:scale-105 relative group ${
+              className={`min-w-[100px] aspect-square cursor-pointer border-2 overflow-hidden transition-all hover:scale-105 relative group ${
                 i === currentVideo
                   ? "border-naranja shadow-lg shadow-naranja/50 scale-105"
                   : "border-moonstone/40 hover:border-moonstone/70"
@@ -146,12 +146,12 @@ export default function VideoCarousel({
                 alt={video.title}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+              <div className="absolute inset-0 bg-jet/0 group-hover:bg-jet/30 transition-all duration-300 flex items-center justify-center">
                 <svg className="w-6 h-6 text-naranja opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
                 </svg>
               </div>
-              <div className="absolute bottom-1 left-1 right-1 bg-black/70 px-2 py-1 rounded text-xs text-white truncate font-oswald">
+              <div className="absolute bottom-1 left-1 right-1 bg-jet/70 px-2 py-1 rounded text-xs text-white truncate font-oswald">
                 {video.title}
               </div>
             </motion.button>

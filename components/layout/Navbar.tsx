@@ -14,10 +14,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b-2 ${
+      className={`bg-jet fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b-2 ${
         scrolled
-          ? "bg-black/95 backdrop-blur-3xl shadow-xl border-naranja"
-          : "bg-black/20 backdrop-blur-3xl border-transparent"
+          ? "bg-jet/95 backdrop-blur-3xl"
+          : "bg-jet/20 backdrop-blur-3xl border-transparent"
       }`}
       style={{ WebkitBackdropFilter: "blur(32px)" }}
     >
@@ -32,7 +32,7 @@ export default function Navbar() {
           }`}
         >
           <img 
-            src="/walka.png" 
+            src="LogosWalka/WalkaT.png" 
             alt="walka tv logo"  
             className="h-10 md:h-14 p-1 object-contain transition-transform duration-200 hover:scale-105"
             
@@ -46,7 +46,7 @@ export default function Navbar() {
                 const videosSection = document.querySelector('[data-section="latest"]');
                 videosSection?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="text-moonstone hover:text-naranja font-bold transition-colors text-sm cursor-pointer"
+              className="text-moonstone hover:text-naranja hover:scale-110 transition-transform font-bold transition-colors text-sm cursor-pointer"
             >
               Videos
             </button>
@@ -55,7 +55,7 @@ export default function Navbar() {
                 const communitySection = document.querySelector('[data-section="stats"]');
                 communitySection?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="text-moonstone hover:text-naranja font-bold transition-colors text-sm cursor-pointer"
+              className="text-moonstone hover:text-naranja hover:scale-110 transition-transform font-bold transition-colors text-sm cursor-pointer"
             >
               Comunidad
             </button>

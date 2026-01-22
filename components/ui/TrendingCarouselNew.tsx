@@ -14,7 +14,7 @@ const trendingVideos = [
 
 export default function TrendingCarousel() {
   return (
-    <section className="snap-start min-h-screen w-full flex flex-col items-center justify-center bg-[#000] py-20 md:py-0" style={{backgroundColor: '#000'}}>
+    <section className="snap-start min-h-screen w-full flex flex-col items-center justify-center py-20 md:py-0">
       <motion.h2 
         className="text-3xl md:text-5xl font-bold mb-12 text-naranja font-oswald"
         initial={{ opacity: 0, y: -30 }}
