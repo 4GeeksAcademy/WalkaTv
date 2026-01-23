@@ -52,8 +52,8 @@ export default function Navbar() {
             </button>
             <button 
               onClick={() => {
-                const communitySection = document.querySelector('[data-section="stats"]');
-                communitySection?.scrollIntoView({ behavior: 'smooth' });
+                const footerSection = document.getElementById('footer');
+                footerSection?.scrollIntoView({ behavior: 'smooth' });
               }}
               className="text-moonstone hover:text-naranja hover:scale-110 transition-transform font-bold transition-colors text-sm cursor-pointer"
             >

@@ -13,7 +13,7 @@ export default function Home() {
       <main className="w-full h-full">
         <HeroSection />
         <LatestContentSection />
-        <BentoGridNew />
+        {/* <BentoGridNew /> */}
         <FooterSection />
       </main>
     </>

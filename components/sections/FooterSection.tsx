@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import BentoGrid from "../ui/BentoGridNew";
+import SocialFeedSection from "./SocialFeedSection";
 
 export default function FooterSection() {
   const containerVariants = {
@@ -26,7 +26,10 @@ export default function FooterSection() {
   };
 
   return (
-    <div className="w-full bg-jet text-moonstone py-4 md:py-6 border-t border-naranja/20">
+    <div id="footer" className="w-full bg-jet text-moonstone pb-10 md:pb-16 scroll-mt-32">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
+        <SocialFeedSection />
+      </div>
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         <motion.div
           className="flex flex-col items-center gap-3"

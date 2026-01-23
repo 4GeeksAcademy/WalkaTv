@@ -194,9 +194,9 @@ export default function BentoGrid() {
 
             <div className="flex flex-col text-center md:text-left">
 
-              <span className="text-lg font-bold text-naranja">Vistas totales</span>
+              <span className="text-lg font-bold text-naranja">Views totales</span>
 
-              <span className="text-sm text-moonstone">Agregado en todas las plataformas</span>
+              <span className="text-sm text-moonstone">En todas las plataformas</span>
 
             </div>
 

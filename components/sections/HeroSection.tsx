@@ -34,15 +34,14 @@ export default function HeroSection() {
           ]}
         />
       </div>
-      {/* InfiniteBanner solo en móviles */}
-      <div className="flex md:hidden w-full items-center justify-center h-[32vh]">
-        <InfiniteBanner
-          images={["LogosWalka/KSR1@2x.png", "LogosWalka/DM1@2x.png", "LogosWalka/LDJ1@2x.png", "LogosWalka/LSDE1.png", "LogosWalka/CafeC.png", "LogosWalka/IW2@2x.png" ]}
-          height="h-24"
-          gap="mx-6"
-          duration={8}
-        />
-      </div>
+        {/* Grid de imágenes en móviles: 2 por fila */}
+        <div className="md:hidden w-full px-4 py-6 grid grid-cols-2 gap-4">
+          {["LogosWalka/KSR1@2x.png", "LogosWalka/DM1@2x.png", "LogosWalka/LDJ1@2x.png", "LogosWalka/LSDE1@2x.png", "LogosWalka/CafeC.png", "LogosWalka/IW2@2x.png"].map((img, idx) => (
+            <div key={idx} className="flex items-center justify-center">
+              <img src={img} alt={`Logo ${idx+1}`} className="w-full h-auto max-h-32 object-contain" />
+            </div>
+          ))}
+        </div>
     </section>
   );
 }
