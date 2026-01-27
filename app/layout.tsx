@@ -16,9 +16,7 @@ export const metadata: Metadata = {
   title: "Walka tv",
   description: "WalkaTV es un canal de streaming y entretenimiento...",
   icons: {
-    icon: "/public/WL.png",
-    shortcut: "/public/WL.png",
-    apple: "/public/WL.png",
+    icon: "/favicon1.png",
   },
 };
 
@@ -32,7 +30,6 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700;800&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet" />
-        <link rel="shortcut icon" href="/WL.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

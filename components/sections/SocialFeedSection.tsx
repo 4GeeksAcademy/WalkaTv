@@ -72,17 +72,24 @@ export default function SocialFeedSection() {
         transition={{ duration: 0.6, delay: 0.5 }}
         viewport={{ once: true }}
       >
-        Únete a nuestras redes sociales, somos tu algoritmo deportivo favorito
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="var(--color-naranja)"
-          xmlns="http://www.w3.org/2000/svg"
-          className="align-middle"
-        >
-          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-        </svg>
+        <p>
+          Únete a nuestras redes sociales, somos tu algoritmo deportivo{' '}
+          <span className="whitespace-nowrap inline-flex items-center">
+            favorito
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="var(--color-naranja)"
+              xmlns="http://www.w3.org/2000/svg"
+              className="align-middle ml-1"
+            >
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+          </span>
+
+        </p>
+
       </motion.div>
     </motion.section>
   );
