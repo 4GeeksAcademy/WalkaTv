@@ -16,7 +16,13 @@ export const metadata: Metadata = {
   title: "Walka tv",
   description: "WalkaTV es un canal de streaming y entretenimiento...",
   icons: {
-    icon: "/favicon1.png",
+    icon: [
+      { url: "/favicon1.png" }, // Asegúrate que mida al menos 32x32
+      { url: "/favicon1.png", sizes: "192x192", type: "image/png" }, // Para Android/Google
+    ],
+    apple: [
+      { url: "/favicon1.png" }, // Para iPhones
+    ],
   },
 };
 
